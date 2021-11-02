@@ -28,7 +28,7 @@ public class Program {
 			
 			Parser.getAllClassData().clear();
 		}		
-/*
+
 		for (ClassData c : classData) {
 			System.out.println("-------------------------------");
 			System.out.println("Class Name: " + c.getClassName());
@@ -38,11 +38,12 @@ public class Program {
 			System.out.println();
 		}
 		
+		System.out.println("============== Conformity Architectural =============");
 		ConformityRules.ra1(classData);
 		ConformityRules.ra2(classData);
 		ConformityRules.ra3(classData);
 		ConformityRules.ra4(classData);
-		ConformityRules.ra5(classData); */
+		ConformityRules.ra5(classData); 
 	}
 
 }
