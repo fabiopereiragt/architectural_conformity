@@ -29,14 +29,16 @@ public class Program {
 			Parser.getAllClassData().clear();
 		}		
 
-		for (ClassData c : classData) {
+	/*	for (ClassData c : classData) {
 			System.out.println("-------------------------------");
 			System.out.println("Class Name: " + c.getClassName());
 			System.out.println("Package: " + c.getPackageName());
 			System.out.println("Class Type: " + c.getClassType());
 			c.getTypes().forEach(t -> System.out.println("Types: " + t));
 			System.out.println();
-		}
+		}*/
+		
+		ConformityRules.ra1(classData);
 	}
 
 }
