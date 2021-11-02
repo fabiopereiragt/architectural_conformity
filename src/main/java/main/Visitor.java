@@ -3,11 +3,13 @@ package main;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.github.javaparser.ast.NodeList;
 import com.github.javaparser.ast.PackageDeclaration;
 import com.github.javaparser.ast.body.ClassOrInterfaceDeclaration;
 import com.github.javaparser.ast.body.FieldDeclaration;
 import com.github.javaparser.ast.body.MethodDeclaration;
 import com.github.javaparser.ast.body.VariableDeclarator;
+import com.github.javaparser.ast.type.ClassOrInterfaceType;
 import com.github.javaparser.ast.visitor.VoidVisitorAdapter;
 
 public class Visitor extends VoidVisitorAdapter<Void> {
@@ -22,6 +24,12 @@ public class Visitor extends VoidVisitorAdapter<Void> {
 		super.visit(n, arg);
 		// Get class or interface name
 		this.nameClass = n.getNameAsString();
+		
+		//Get implements - returns an array with all implements
+		NodeList<ClassOrInterfaceType> inter = n.getImplementedTypes();
+		if(inter.size() > 0) {
+			inter.forEach(t -> fields.add(t.getNameAsString()));			
+		}
 
 		//Set class type based on data annotation
 		if (n.getAnnotations().size() > 0) {
