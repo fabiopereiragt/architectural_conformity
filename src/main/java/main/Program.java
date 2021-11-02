@@ -39,6 +39,7 @@ public class Program {
 		}*/
 		
 		ConformityRules.ra1(classData);
+		ConformityRules.ra2(classData);
 	}
 
 }
